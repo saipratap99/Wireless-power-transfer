@@ -3,8 +3,8 @@ clc;
 
 L1 = 375.48e-6;
 L2 = 375.48e-6;
-freq = [50:20:110]
-effi = []
+freq = [100:100:1000 2000:10000];
+effi = [];
 for f = freq
     Inverter_period = 1/f;
     Inverter_phase_delay = Inverter_period/2;
