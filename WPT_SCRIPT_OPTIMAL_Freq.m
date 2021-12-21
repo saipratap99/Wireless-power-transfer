@@ -3,14 +3,14 @@ clc;
 
 L1 = 375.48e-6;
 L2 = 375.48e-6;
-freq = [100:100:1000 2000:1000:10000];
+freq = [100];
 effi = [];
 for f = freq
     Inverter_period = 1/f;
     Inverter_phase_delay = Inverter_period/2;
     C1 = 1/(4*pi*pi*f*f*L1);
     C2 = 1/(4*pi*pi*f*f*L2);
-    out = sim('test');
+    out = sim('WPT_19b');
     pin_index = size(out.Pin.Time,1);
     Pin = out.Pin.Data(pin_index,2);
     pout_index = size(out.Pout.Time,1);
