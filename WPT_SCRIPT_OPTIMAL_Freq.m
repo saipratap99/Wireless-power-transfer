@@ -3,7 +3,7 @@ clc;
 
 L1 = 375.48e-6;
 L2 = 375.48e-6;
-freq = [100];
+freq = [50000];
 effi = [];
 for f = freq
     Inverter_period = 1/f;
@@ -16,10 +16,10 @@ for f = freq
     pout_index = size(out.Pout.Time,1);
     Pout = out.Pout.Data(pout_index,1);
     effi(length(effi) + 1) = Pout/Pin*100;
-    fprintf('f: %8d, C: %4.4f, Pin: %4.2f, Pout: %4.2f, n: %4.2f\n',f,C1,Pin,Pout,effi(length(effi)));
+    fprintf('f: %8d, C: %2.8f, Pin: %4.2f, Pout: %4.2f, n: %4.2f\n',f,C1,Pin,Pout,effi(length(effi)));
 end
+
 
 plot(freq,effi,'b-o')
 xlabel('frequency');
 ylabel('efficieny');
-   
