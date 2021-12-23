@@ -4,7 +4,7 @@ clc;
 L1 = 375.48e-6;
 L2 = 375.48e-6;
 M = 344.58e-06;
-voltages = [325:25:400];
+voltages = [200:25:400];
 f = 10000;
 Inverter_period = 1/f;
 Inverter_phase_delay = Inverter_period/2;
